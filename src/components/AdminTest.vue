@@ -220,10 +220,7 @@
     font-family: 'Montserrat', sans-serif; 
   }
   
-  .container {
-    max-width: 1300px;
-    margin: 0 auto;
-  }
+
 
   body {
     background: #000;

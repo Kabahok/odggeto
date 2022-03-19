@@ -2,11 +2,11 @@
   <div class="container">
     <div class="log_head">
       <div class="log_head-icon">
-        <img src="./assets/UserCircle.svg" alt="user">
+        <img src="../assets/UserCircle.svg" alt="user">
       </div>
       
       <div class="log_head-name">
-          Логин
+          Имя Фамилия Отчество
       </div>
     </div>
 
@@ -20,12 +20,12 @@
           <div class="log_item-theme">
             <span class="log_item-num">1</span>
             <span class="log_item-text">
-              Тест: Тема 
+              Тестировщик
             </span>
           </div>
-          <div class="log_item-rez">Результат <span>100%</span></div>
+          <div class="log_item-rez">Результат <span class="green">100%</span></div>
           <div class="log_item-btn">
-            <button>Пройти тест</button>
+            <button class="btn">Пройти тест</button>
           </div>
         </div>
 
@@ -33,12 +33,27 @@
           <div class="log_item-theme">
             <span class="log_item-num">2</span>
             <span class="log_item-text">
-              Тест: Тема 
+              Веб-разработчик 
+
             </span>
           </div>
-          <div class="log_item-rez">Результат <span>10%</span></div>
+          <div class="log_item-rez">Результат <span class="orange">65%</span></div>
           <div class="log_item-btn">
-            <button>Пройти тест через 01:01:00</button>
+            <button class="btn btn-disabled">Пройти тест через 01:01:00</button>
+          </div>
+        </div>
+
+        <div class="log_item">
+          <div class="log_item-theme">
+            <span class="log_item-num">2</span>
+            <span class="log_item-text">
+              Веб-разработчик 
+
+            </span>
+          </div>
+          <div class="log_item-rez">Результат <span class="red">10%</span></div>
+          <div class="log_item-btn">
+            <button class="btn btn-disabled">Пройти тест через 01:01:00</button>
           </div>
         </div>
       </div>
@@ -54,7 +69,7 @@
     &_head {
       display: flex;
       align-items: center;
-      width: 300px;
+      min-width: 300px;
       min-height: 100px;
       &-name {
         font-family: 'Roboto';
@@ -85,7 +100,8 @@
         border-radius: 6px;
         width: 418px;
         height: 60px; 
-        padding: 18px 12px;
+        padding: 18px 24px;
+        
       }
       &-num, &-text, &-rez {
         font-weight: 400;
@@ -94,6 +110,7 @@
       }
       &-num {
         margin-right: 30px;
+
       }
       &-rez {
         margin-left: 60px;
@@ -103,7 +120,6 @@
         border-radius: 6px;
         padding: 18px 30px;
         span {
-          color: #FFED00;
           margin-left: 20px;
         }
       }
@@ -112,7 +128,11 @@
         width: 319px;
         height: 60px;
         margin-left: 60px;
-        button {
+      }
+    }
+  }
+
+.btn {
           width: 100%;
           height: 100%;
           cursor: pointer;
@@ -122,11 +142,25 @@
           font-weight: 600;
           font-size: 18px;
           color: #000000;
+}
 
-        }
-      }
-    }
-  }
+.red {
+  color: #FA9494;
+}
 
+.green {
+  color: #61FF00;
+}
+
+.orange {
+  color: #FFED00;
+}
+
+.btn-disabled {
+  background: none;
+  color: #F6F6F6;
+  border: 1px solid #FFED00;
+  border-radius: 6px;
+}
 
 </style>

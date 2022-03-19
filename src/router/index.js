@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import RegForm from '../components/RegForm.vue'
+import AdminTest from '../components/AdminTest.vue'
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: RegForm
+  },
+  {
+    path:'/admin-constructor',
+    name: 'admin-constructor',
+    component: AdminTest
   },
   {
     path: '/about',
@@ -18,8 +23,8 @@ const routes = [
 ]
 
 const router = createRouter({
+  routes,
   history: createWebHistory(process.env.BASE_URL),
-  routes
 })
 
 export default router

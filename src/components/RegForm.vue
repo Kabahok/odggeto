@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <div class="content" v-if="show">
+<div class="container">
+  <div class="reg_img">
+    <img src="../assets/reg_bg.jpg" alt="">
+  </div>
+    <div class="wrapper">
+
+      <div class="wrapper_item">
+    <div class="content">
       <div class="reg_content">
         <h1 class="reg_title">Регистрация начинается отсюда</h1>
         <div class="reg_des">Пожалуйста указывайте свои настоящие данные, они будут использоваться в дальнейшем на собеседовании.</div>
@@ -34,8 +40,8 @@
 
       <div class="info"></div>
     </div>
-
-    <div class="content" v-else >
+<!-- 
+    <div class="content" >
       <div class="reg_content">
         <h1 class="reg_title">Авторизация</h1>
         <div class="reg">
@@ -57,9 +63,19 @@
         </div>
       </div>
 
-      <div class="info"></div>
-    </div>
+  
+    </div> -->
+      </div>
+
+      <div class="wrapper_item info">
+        <div class="info_logo">
+          <img src="../assets/logo_reg.svg" alt="">
+        </div>
+
+        <div class="info_text">Добро пожаловать! Раз вы попали на эту страницу, значит вы являетесь соискалем и уже знакомы с нашей компанией. Для того чтобы попасть к нам на собеседование в офис вам потребуется зарегистрироваться на данной платформе. После прохождения теста вы сможете узнать, соответствуете ли вы нашим стандартам. И помните, используйте только ваши актуальные ФИО, адрес электронной почты и номер телефона они будут использованы в дальнейших этапах после тестрования.</div>
+      </div>
   </div>
+</div>
 </template> 
 
 
@@ -72,6 +88,7 @@ export default {
       phone: '',
       email: '',
       password: '',
+      url: 'http://localhost:3000'
 
     }
   },
@@ -89,24 +106,20 @@ export default {
     async register(url) {
       const postData = {
         name: this.name,
-        phone: this.number,
+        telephone: this.phone,
         email: this.email,
         password: this.password
       };
-    
-      const rec = {
-        method: "POST",
+      let response = await fetch(`${this.url}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
         body: JSON.stringify(postData)
-      };
+      });
 
-
-      await fetch(url, rec);
-
-      console.log(postData);
-      this.name = ''
-      this.email = ''
-      this.password = ''
-      this.number = ''
+      let result = await response.json();
+      localStorage.setItem('token', result.token);
     },
 
     async log(url) {
@@ -115,11 +128,15 @@ export default {
         password: this.password
       };
 
-      await fetch(url, {
+      let data = await fetch(`${this.url}/auth/login`, {
         method: "POST",
-        body: JSON.stringify(postData),
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        postData
       });
-
+      let result = await data.json();
+      localStorage.setItem('token', result.token);
       console.log(postData);
     }
   }
@@ -137,19 +154,64 @@ export default {
     font-family: 'Montserrat', sans-serif; 
   }
 
+    .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   body {
     background: #000;
   }
-
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .content {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
+  .info {
+    &_text {
+      font-weight: 500;
+      font-size: 20px;
+      text-align: center;
+      color: #F6F6F6;
+      max-width: 520px;
+      
+    }
+
+    &_logo {
+      width: 150px;
+      height: 140px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
   .reg {
+    &_img {
+      position: absolute;
+      right: -10%;
+      top: 0;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
     &_content {
-      padding: 100px 0;
+      padding: 50px 0;
       max-width: 576px;
     }
     &_form {
