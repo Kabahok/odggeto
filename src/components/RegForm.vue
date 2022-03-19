@@ -72,6 +72,7 @@ export default {
       phone: '',
       email: '',
       password: '',
+      url: 'http://localhost:3000'
 
     }
   },
@@ -89,20 +90,20 @@ export default {
     async register(url) {
       const postData = {
         name: this.name,
-        phone: this.number,
+        telephone: this.phone,
         email: this.email,
         password: this.password
       };
-    
-      const rec = {
-        method: "POST",
+      let response = await fetch(`${this.url}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
         body: JSON.stringify(postData)
-      };
+      });
 
-
-      await fetch(url, rec);
-
-      console.log(postData);
+      let result = await response.json();
+      localStorage.setItem('token', result.token);
     },
 
     async log(url) {
@@ -111,11 +112,15 @@ export default {
         password: this.password
       };
 
-      await fetch(url, {
+      let data = await fetch(`${this.url}/auth/login`, {
         method: "POST",
-        body: JSON.stringify(postData),
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        postData
       });
-
+      let result = await data.json();
+      localStorage.setItem('token', result.token);
       console.log(postData);
     }
   }
