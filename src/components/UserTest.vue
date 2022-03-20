@@ -2,11 +2,15 @@
   <div class="container">
   <header class="header">
     <div class="header_logo">
-      <img src="./assets/logo.svg" alt="logo">
+      <img src="../assets/logo.svg" alt="logo">
     </div>
-    <button class="header_btn">
-        Концепт
-    </button>
+
+    <div class="header_link">
+        <div class="header_icon">
+            <img src="../assets/user_mini.svg" alt="">
+        </div>
+        <div class="header_txt">Профиль</div>
+    </div>
   </header>
 
   <div class="start">
@@ -55,7 +59,7 @@
 
         <div class="test_div">
           <input type="text" placeholder="Название темы теста" class="test_item-input input">
-          <div class="test_icon"><img src="./assets/del.svg" alt="delete"></div>
+          <div class="test_icon"><img src="../assets/del.svg" alt="delete"></div>
         </div>
 
 
@@ -70,7 +74,7 @@
         <div class="test_item-des des ">Выберите один ответ для продолжения.</div>
 
         <div class="test_img">
-          <img src="./assets/p3.jpg" alt="photo">
+          <img src="../assets/p3.jpg" alt="photo">
         </div>
 
         <div class="test_div">
@@ -79,7 +83,7 @@
 
         <div class="test_div">
           <input type="text" placeholder="Название темы теста" class="test_item-input input">
-          <div class="test_icon"><img src="./assets/del.svg" alt="delete"></div>
+          <div class="test_icon"><img src="../assets/del.svg" alt="delete"></div>
         </div>
 
 

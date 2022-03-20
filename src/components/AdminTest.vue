@@ -2,11 +2,14 @@
 <div class="container">
   <header class="header">
     <div class="header_logo">
-      <img src="./assets/logo.svg" alt="logo">
+      <img src="../assets/logo.svg" alt="logo">
     </div>
-    <button class="header_btn">
-        Концепт
-    </button>
+    <div class="header_link">
+        <div class="header_icon">
+            <img src="../assets/user_mini.svg" alt="">
+        </div>
+        <div class="header_txt">Профиль</div>
+    </div>
   </header>
 
   <div class="test" >
@@ -66,7 +69,7 @@
             </div>
 
              <div class="test_check-icon">
-               <img src="./assets/pencil.svg" alt="icon">
+               <img src="../assets/pencil.svg" alt="icon">
              </div>
           </div>
 
@@ -77,13 +80,13 @@
              </div>
 
              <div class="test_check-icon">
-               <img src="./assets/pencil.svg" alt="icon">
+               <img src="../assets/pencil.svg" alt="icon">
              </div>
           </div>
 
           <div class="test_add">
             <div class="test_add-icon">
-              <img src="./assets/add.svg" alt="add">
+              <img src="../assets/add.svg" alt="add">
             </div>
             <div class="test_add-text">Добавить вариант</div>
           </div>
@@ -98,11 +101,11 @@
         <div class="test_item-des des ">Выберите один ответ для продолжения.</div>
         <div class="test_div">
           <input type="text" placeholder="Название темы теста" class="test_item-input input">
-          <div class="test_icon"><img src="./assets/del.svg" alt="delete"></div>
+          <div class="test_icon"><img src="../assets/del.svg" alt="delete"></div>
         </div>
         <div class="test_div">
           <input type="text" placeholder="Название темы теста" class="test_item-input input">
-          <div class="test_icon"><img src="./assets/del.svg" alt="delete"></div>
+          <div class="test_icon"><img src="../assets/del.svg" alt="delete"></div>
         </div>
         <div>
           <button class="test_item-btn">Продолжить</button>
@@ -115,14 +118,14 @@
 
         <div class="test_load">
           <div class="test_load-icon">
-            <img src="./assets/load.svg" alt="icon">
+            <img src="../assets/load.svg" alt="icon">
           </div>
 
           <div class="test_load-click">Загрузить изображение</div>
         </div>
         <div class="test_div">
           <input type="text" placeholder="Название темы теста" class="test_item-input input">
-          <div class="test_icon"><img src="./assets/del.svg" alt="delete"></div>
+          <div class="test_icon"><img src="../assets/del.svg" alt="delete"></div>
         </div>
 
         <div class="inf">Тип ответа:</div>
@@ -151,7 +154,7 @@
         <div class="test_item-des des ">Выберите один ответ для продолжения.</div>
         <div class="test_div">
           <input type="text" placeholder="Название темы теста" class="test_item-input input">
-          <div class="test_icon"><img src="./assets/del.svg" alt="delete"></div>
+          <div class="test_icon"><img src="../assets/del.svg" alt="delete"></div>
         </div>
 
         <div class="inf">Тип ответа:</div>
@@ -203,7 +206,7 @@
     </div>
     <div class="link_item">
       <div class="link_icon">
-        <img src="./assets/link.svg" alt="">
+        <img src="../assets/link.svg" alt="">
       </div>
       <div class="link_text"><a href="#">https://vk.com/im?peers=172401009_c239_1950725...</a></div>
     </div>
@@ -418,6 +421,7 @@
         font-weight: 600;
         font-size: 18px;
         color: #FFED00;
+        margin-top: 45px;
       }
     }
   }

@@ -200,8 +200,9 @@ export default {
 
   .reg {
     &_img {
-      position: absolute;
-      right: -10%;
+      width: 684px;
+    position: absolute;
+    right: -4%;
       top: 0;
       height: 100%;
       img {
